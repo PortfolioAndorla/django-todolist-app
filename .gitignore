@@ -1,0 +1,57 @@
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
+
+# Archivos de Python compilados
+*.pyc
+*.pyo
+__pycache__/
+
+# Archivos temporales
+*.log
+*.pot
+*.mo
+*.swp
+*.swo
+*.DS_Store
+*.bak
+*.tmp
+
+# Archivos de bases de datos locales
+db.sqlite3
+*.sqlite3
+
+# Archivos de configuración de VSCode/PyCharm u otros IDE
+.vscode/
+.idea/
+
+# Archivos de entorno
+.env
+.env.*
+
+# Archivos de migración opcionales
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Archivos de media generados por usuarios
+/media/
+media/
+
+# Archivos de caché de Django
+*.pid
+
+# Archivos de configuración de cobertura de tests
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+.pytest_cache/
+
+# Archivos de test
+test-results/
+
+# Mac/Linux archivos ocultos
+*.~undo-tree*
