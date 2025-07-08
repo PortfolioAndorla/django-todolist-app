@@ -1,0 +1,50 @@
+{% extends '../base.html' %} {% block content %}
+<a href="{% url 'task_create' %}" class="btn btn-success mb-3"
+  > Nueva Tarea</a
+>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+        <th scope="col"><i class="bi bi-check fs-6"></i></th> 
+      <th scope="col">Título</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Fecha Límite</th>
+      <th scope="col">Prioridad</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %} 
+    {% if not task.is_completed %}
+    <tr
+      class="{% if task.priority == 'high' %}table-danger
+      {% elif task.priority == 'medium' %}table-warning
+       {% else %}table-success
+        {% endif %}"
+    >
+
+      <td>
+        <a href="{% url 'task_complete' task.pk %}" class="btn btn-sm btn-outline-success">
+          <i class="bi bi-check fs-7"></i>
+        </a>
+      </td>
+      <td>{{ task.title }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.due_date }}</td>
+      <td>{{ task.priority }}</td>
+      <td>
+        <a href="{% url 'task_edit' task.pk %}" class="btn btn-sm btn-primary"
+          ><i class="bi bi-archive"></i></a
+        >
+        <a href="{% url 'task_delete' task.pk %}" class="btn btn-sm btn-danger"
+          ><i class="bi bi-pen"></i></a
+        >
+        
+      </td>
+    </tr>
+    {% endif %} 
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
