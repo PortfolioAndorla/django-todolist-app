@@ -1,17 +1,16 @@
 {% extends '../base.html' %}
 
 {% block content %}
-<a href="{% url 'task_list' %}" class="btn btn-outline-secondary mb-3">⬅ Volver</a>
 
-<h2>Tareas Completadas</h2>
+<h2>Completed Tasks</h2>
 
-<table class="table table-bordered">
+<table class="table">
     <thead>
         <tr>
-            <th>Título</th>
-            <th>Descripción</th>
-            <th>Fecha Límite</th>
-            <th>Prioridad</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Priority</th>
         </tr>
     </thead>
     <tbody>
