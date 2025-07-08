@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+{% block content %}
+<a href="{% url 'task_list' %}" class="btn btn-outline-secondary mb-3">⬅ Volver</a>
+
+<h2>Tareas Completadas</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Fecha Límite</th>
+            <th>Prioridad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr class="table-light">
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.due_date }}</td>
+            <td>{{ task.priority }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
